@@ -1,0 +1,18 @@
+// 1-main components
+@import "./components/1-main/animations.scss";
+@import "./components/1-main/variables.scss";
+@import "./components/1-main/mixin.scss";
+@import "./components/1-main/typography.scss";
+@import "./components/1-main/nulifier.scss";
+// 2-layout components
+@import "./components/2-layout/components.scss";
+@import "./components/2-layout/header.scss";
+@import "./components/2-layout/comparisonTable.scss";
+@import "./components/2-layout/popups.scss";
+
+// 2-pages components
+@import "./components/3-pages/search.scss";
+@import "./components/3-pages/createNft.scss";
+
+// responsive
+@import "./components/2-layout/responsive.scss";

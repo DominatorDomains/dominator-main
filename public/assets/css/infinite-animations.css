@@ -1,0 +1,122 @@
+@keyframes rockit {
+  from {
+    transform: translatey(30px) rotate(-45deg);
+  }
+  to {
+    transform: translatey(30px) rotate(10deg);
+  }
+}
+@keyframes moveY {
+  from {
+    transform: translatey(0);
+  }
+  to {
+    transform: translatey(-30px);
+  }
+}
+
+@keyframes bubble-transparent {
+  0% {
+    opacity: 0.9;
+    transform: translateY(-10%);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateY(10%);
+  }
+}
+
+@keyframes cork {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes float1 {
+  from {
+    transform: translateX(-50px);
+  }
+  to {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes float2 {
+  from {
+    transform: translateX(50px);
+  }
+  to {
+    transform: translateX(-50px);
+  }
+}
+
+@keyframes swim {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(10deg);
+  }
+}
+@keyframes network {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translate(3%, 4%) scale(0.95);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.rockit {
+  animation: rockit 23s ease infinite alternate;
+}
+.cork {
+  animation-name: cork;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.moveY {
+  animation-name: moveY;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+}
+
+.bubble-transparent {
+  animation-name: bubble-transparent;
+  animation-duration: 28s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+}
+.float2 {
+  animation: float2 4s ease-in-out infinite alternate;
+}
+
+.float1 {
+  animation: float1 4s ease-in-out infinite alternate;
+}
+.twinkle {
+  animation: fadeIn 0.5s 0.2s linear infinite alternate;
+}
+.swim {
+  animation: swim 2s linear infinite alternate;
+}
+.network {
+  animation: network 13s ease infinite alternate;
+}
+
+/* =========== */

@@ -1,0 +1,636 @@
+.autoContainer {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.input {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  input {
+    width: 100%;
+    border-radius: 1.2em;
+    background: $color-2;
+    background: $gradient-secondary;
+    padding: 0.8em 1.3em;
+    border: 1px solid rgba($color-2, 0.1);
+    transition: 0.3s ease-out;
+    // font
+    color: mix($color-2, $white, 20%);
+    font-family: $font-secondary;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+
+    &::placeholder {
+      color: rgba($white, 0.8);
+    }
+    &:focus {
+      color: $white;
+      border: 1px solid rgba($color-2, 0.3);
+      & + .input__shadow {
+        border-radius: 40%;
+        box-shadow: -5px 0 25px 3px rgba($magenta, 0.35),
+          -20px 5px 60px 40px rgba($black-bg, 0.35);
+      }
+    }
+  }
+  &__shadow {
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transition: 0.3s ease-out;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 35px 10px rgba($magenta, 0.2),
+      -30px 5px 50px 50px rgba($black-bg, 0.36);
+    z-index: -1;
+  }
+  &__helper {
+    cursor: default;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+
+    .textLink {
+      color: $white-3;
+    }
+    span {
+      opacity: 0.4;
+    }
+  }
+}
+.textLink {
+  cursor: pointer;
+  color: inherit;
+  font-size: 16px;
+  font-family: $font-secondary;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1em;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: 0.2s;
+  background: transparent;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.4em;
+  padding: 0.8em 1em;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+
+  //font
+  font-size: 18px;
+  font-family: $font-secondary;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1em;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  text-align: center;
+
+  &--primary {
+    position: relative;
+    transition-delay: 0.2s;
+    z-index: 0;
+    padding: 0;
+
+    //font
+    color: $white;
+    text-transform: capitalize;
+
+    span {
+      background: $gradient-1-reverse;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+      border-radius: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      padding: 0.8em;
+      box-shadow: inset 0 0 3px rgba($white, 0);
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      bottom: -2px;
+      right: -2px;
+      z-index: -1;
+      z-index: -1;
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      // opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      border-radius: 10px;
+      background: linear-gradient(
+        45deg,
+        $color-1,
+        $color-2,
+        $color-3,
+        $color-4,
+        $color-5,
+        $color-1
+      );
+      background-size: 400%;
+      filter: blur(6px);
+      opacity: 0;
+      transform: scale(0.8);
+      animation: glowing 20s linear infinite;
+    }
+
+    &:hover,
+    &.animated {
+      opacity: 1;
+      span {
+        box-shadow: inset 0 0 1px 1px rgba($white, 0.6);
+      }
+      &:before {
+        opacity: 0.9;
+        transform: scale(1);
+      }
+    }
+
+    &._lg {
+      padding: 0;
+
+      span {
+        padding: 0.8em 1.6em;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+    &._xlg {
+      font-size: 20px;
+      padding: 0;
+
+      span {
+        padding: 0.8em 1.6em;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
+    &.color--green {
+      span {
+        background: $gradient-green;
+      }
+    }
+  }
+  &--shadow {
+    box-shadow: 0 5px 50px 5px rgba($black-bg, 0.1);
+
+    &:hover {
+      box-shadow: 0 5px 50px 5px rgba($black-bg, 0.1),
+        0 2px 10px 0px rgba($black-bg, 0.25), inset 0 0 10px rgba($white, 0.22);
+      opacity: 0.9;
+    }
+  }
+  &--border {
+    color: $white;
+    font-weight: 500;
+    // box-shadow: 0 5px 50px 5px rgba($black-bg, 0.1);
+    transition-delay: 0.2s;
+    // border: 1px solid $color-2;
+    border: 1px solid $white;
+    background: transparent;
+    opacity: 0.6;
+
+    span {
+      display: inline-block;
+      color: $white;
+      transition: inherit;
+      // @include textGradient($gradient-1-reverse);
+    }
+
+    &:hover {
+      opacity: 0.8;
+      border-color: $color-3;
+      transition-delay: 0s;
+      background: rgba($color-2, 0.07);
+    }
+    // bac
+  }
+
+  &._select {
+    position: relative;
+    min-width: 210px;
+
+    .button__dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: calc(100% + 1px);
+      display: flex;
+      flex-direction: column;
+      background: $black-bg;
+      border-radius: inherit;
+      border: 1px solid $color-3;
+      padding: 5px 0;
+      box-sizing: border-box;
+      background: mix($black-bg, $magenta, 80%);
+      @include hideScroll;
+
+      opacity: 0;
+      pointer-events: 0;
+      overflow: hidden;
+      max-height: 0;
+
+      li {
+        padding: 0.5em 0.7em;
+        border-bottom: 1px solid rgba($white, 0.2);
+        //font
+        color: $white;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $font-secondary;
+        line-height: 1.2;
+        text-align: left;
+        background: transparent;
+        transition: 0.3s ease-out;
+
+        &:last-child {
+          border: 0;
+        }
+        &:hover {
+          background: $black-bg;
+        }
+      }
+    }
+
+    &.active {
+      z-index: 1;
+      opacity: 0.9;
+      .button__dropdown {
+        max-height: 300px;
+        overflow-y: auto;
+        opacity: 1;
+        pointer-events: all;
+      }
+    }
+  }
+  &._icoLeft {
+    position: relative;
+    padding: 0.8em 1em 0.8em 2.4em;
+
+    .button__ico {
+      position: absolute;
+      top: 50%;
+      left: 0.8em;
+      transform: translateY(-50%);
+      width: 1em;
+      height: 1em;
+      font-size: inherit;
+
+      svg {
+        color: inherit;
+        width: 100%;
+        height: 100%;
+      }
+
+      &._small {
+        width: 0.8em;
+        height: 0.8em;
+      }
+      &._flipY {
+        transform: translateY(-50%) rotateX(180deg);
+      }
+    }
+  }
+  &:active {
+    opacity: 0.6;
+  }
+  &.active {
+    opacity: 1 !important;
+    z-index: 1;
+  }
+}
+.iconButton {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  border-radius: 0.4em;
+  padding: 1.8em;
+  border-radius: 50%;
+  border: 0.2em solid rgba($white, 0.05);
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+  text-decoration: none;
+  color: $white;
+
+  img {
+    width: 2em;
+    height: 2em;
+  }
+
+  &:hover {
+    background: rgba($black-bg, 0.25);
+    border-color: rgba($white, 0.25);
+    box-shadow: inset -5px -10px 20px rgba($magenta, 0.26);
+  }
+}
+.glow {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 250px 150px $magenta;
+
+  &--blue {
+    box-shadow: 0 0 250px 150px $color-3;
+  }
+  &__outer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+.gradientTitle {
+  //font
+  color: $white;
+  font-size: 28px;
+  font-weight: 700;
+  font-family: $font-secondary;
+  line-height: 1.2;
+  margin-bottom: 0.6em;
+
+  span {
+    @include textGradient($gradient-light);
+  }
+}
+.gradientText {
+  margin-bottom: 0.6em;
+
+  &--primary {
+    span {
+      @include textGradient($gradient-light);
+    }
+  }
+  &--secondary {
+    span {
+      @include textGradient($gradient-eth);
+    }
+  }
+  &--light {
+    span {
+      @include textGradient($gradient-eth-lighter);
+    }
+  }
+}
+.custIco {
+  position: relative;
+  width: 1em;
+  height: 1em;
+
+  &--rightArr {
+    &::after {
+      position: absolute;
+      content: "";
+      display: block;
+      top: 50%;
+      right: 0;
+      width: 0.3em;
+      height: 0.3em;
+      border-top: 3px solid currentColor;
+      border-right: 3px solid currentColor;
+      z-index: 1;
+      transform: translate(-50%, -50%) rotate(45deg);
+      transition: 0.2s ease;
+    }
+  }
+}
+.videoContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 65%;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba($main, 0.4);
+
+  &__poster {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    z-index: 1;
+    transition: 0.4s ease-in-out;
+    img {
+      pointer-events: none;
+      @include fullImage;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      width: 90%;
+      height: 90%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 2px 25px rgba($white, 0.2);
+      animation-name: posterAnimation;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+  }
+  &.active {
+    .videoContainer__poster {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+.copyBox {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  z-index: 0;
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: inherit;
+
+    img {
+      width: 1.1em;
+      height: 1.1em;
+      margin-left: 0.4em;
+    }
+  }
+  &__message {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+    transition: 0.3s ease-in;
+    padding: 0.5em 0.8em;
+    border-radius: 1em;
+    background: $white;
+
+    //font
+    color: $black-bg;
+    font-family: $font-secondary;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    opacity: 0;
+
+    &.active {
+      opacity: 1;
+      bottom: 50%;
+    }
+  }
+}
+.scrollingWords {
+  &__content {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: $font-primary;
+    white-space: nowrap;
+    background: $gradient-dark;
+    opacity: 0.8;
+    box-shadow: 0px 2.3px 17px #9642c5;
+    border-radius: 20px;
+    padding: 0.5em 1em;
+    box-sizing: border-box;
+
+    &-box {
+      height: 3rem;
+      margin: auto;
+      overflow: hidden;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        animation: scrollUp 7s infinite;
+        li {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 3rem;
+          list-style: none;
+          color: $color-3;
+
+          span {
+            color: $white;
+            margin-left: 0.4em;
+          }
+        }
+      }
+    }
+  }
+}
+.popup {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  border-radius: 20px;
+  padding: 10px 16px;
+  transition: 0.2s ease;
+  box-sizing: border-box;
+  margin-right: 20px;
+  text-align: center;
+  border: 1px solid rgba($white, 0.25);
+  transform: translateX(-50%) scale(0.8);
+  opacity: 0;
+  pointer-events: none;
+  //font
+  color: #ffffff;
+  font-family: $font-primary;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: inherit;
+    background: $gradient-dark;
+    z-index: -1;
+    box-shadow: 0px 2.3px 17px #9642c5;
+    opacity: 0.8;
+  }
+  &__outer {
+    position: relative;
+    &:hover {
+      .popup {
+        top: calc(100% + 15px);
+        transform: translateX(-50%) scale(1);
+        pointer-events: all;
+        opacity: 1;
+      }
+    }
+  }
+}
+// Variables
+$item-count: 4;
+
+@keyframes scrollUp {
+  @for $i from 0 through ($item-count - 1) {
+    #{$i * 25%},
+    #{($i * 25) + 20%} {
+      transform: translateY((-100% / $item-count) * $i);
+    }
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}

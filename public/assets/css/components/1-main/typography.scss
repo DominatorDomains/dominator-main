@@ -1,0 +1,121 @@
+// Raleway
+// Rubik  bold| medium
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+
+h1 {
+  font-size: 50px;
+  &._xlg {
+    font-size: 70px;
+  }
+}
+h2 {
+  font-size: 50px;
+  &._lg {
+    font-size: 55px;
+  }
+}
+h3 {
+  font-size: 48px;
+}
+h4 {
+  font-size: 36px;
+}
+h5 {
+  font-size: 28px;
+}
+h6 {
+  font-size: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+p {
+  font-family: $font-roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+@mixin typography-1400 {
+  h1 {
+    font-size: 45px;
+    &._xlg {
+      font-size: 50px;
+    }
+  }
+  h2 {
+    font-size: 40px;
+    &._lg {
+      font-size: 45px;
+    }
+  }
+  h3 {
+    font-size: 38px;
+  }
+  h4 {
+    font-size: 32px;
+  }
+}
+@mixin typography-1180 {
+  h1 {
+    font-size: 36px;
+    &._xlg {
+      font-size: 44px;
+    }
+  }
+  h2 {
+    font-size: 36px;
+    &._lg {
+      font-size: 40px;
+    }
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 28px;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  h6 {
+    font-size: 22px;
+  }
+}
+@mixin typography-540 {
+  h1 {
+    font-size: 32px;
+    &._xlg {
+      font-size: 36px;
+    }
+  }
+  h2 {
+    font-size: 32px;
+    &._lg {
+      font-size: 32x;
+    }
+  }
+  h3 {
+    font-size: 28px;
+  }
+  h4 {
+    font-size: 24px;
+  }
+  h5 {
+    font-size: 22px;
+  }
+  h6 {
+    font-size: 20px;
+  }
+}

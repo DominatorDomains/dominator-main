@@ -1,0 +1,193 @@
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 399% 0;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes fadeInUpCenter {
+  0% {
+    transform: translate(-50%, -40%);
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeZoomInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10%) scale3d(0.9, 0.9, 0.9);
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.7, 0.7, 0.7);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes posterAnimation {
+  from {
+    width: 0;
+    height: 0;
+    opacity: 1;
+    box-shadow: 0 0 0 15px #fff;
+  }
+  to {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    box-shadow: 0 0 0 30px #fff;
+  }
+}
+@keyframes rotateIn {
+  from {
+    transform: rotateX(180deg);
+    opacity: 0;
+  }
+
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes moveDiagonals {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  25% {
+    top: 100%;
+    left: 100%;
+  }
+  50% {
+    top: 0%;
+    left: 100%;
+  }
+  75% {
+    top: 100%;
+    left: 0%;
+  }
+  100% {
+    top: 0;
+    left: 0;
+  }
+}
+@keyframes moveY {
+  0% {
+    transform: translateY(-15%) scale(1.05);
+  }
+  100% {
+    transform: translateY(15%) scale(0.95);
+  }
+}
+@keyframes moveShortY {
+  0% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(5%);
+  }
+}
+
+.animate {
+  animation-duration: 0.4s;
+  animation-fill-mode: backwards;
+  &--infinite {
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+}
+.fadeIn {
+  animation-name: fadeIn;
+}
+.fadeInUp {
+  animation-name: fadeInUp;
+}
+.zoomIn {
+  animation-name: zoomIn;
+}
+.fadeZoomInUp {
+  animation-name: fadeZoomInUp;
+}
+.rotateIn {
+  animation-name: rotateIn;
+  transform-origin: center;
+}
+.glowEffect {
+  position: relative;
+  width: 100%;
+  display: flex;
+  z-index: 0;
+  border-radius: 15px;
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 50px 30px $color-1;
+  }
+  &:before {
+    animation: moveDiagonals 16s ease 0.3s infinite;
+    box-shadow: 0 0 120px 60px $color-3;
+    z-index: -1;
+    opacity: 0.8;
+  }
+  &:after {
+    animation: moveDiagonals 16s ease 0s infinite;
+
+    box-shadow: 0 0 30px 20px $color-3;
+    opacity: 0.33;
+  }
+
+  .button {
+    width: 100%;
+    z-index: 1;
+  }
+}

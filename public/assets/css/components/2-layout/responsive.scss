@@ -1,0 +1,65 @@
+@media (max-width: 1400px) {
+  @include typography-1400;
+  @include header-1400;
+  @include home-1400;
+}
+@media (max-width: 1180px) {
+  .autoContainer {
+    padding: 0 50px;
+  }
+  .button {
+    font-size: 16px;
+  }
+  @include typography-1180;
+  @include header-1180;
+  @include home-1180;
+  @include comparisonTable-1180;
+  @include search-1180;
+  @include createNft-1180;
+}
+@media (max-width: 1025px) {
+  .autoContainer {
+    padding: 0 40px;
+  }
+
+  @include header-1025;
+  @include comparisonTable-1025;
+  @include createNft-1025;
+}
+@media (max-width: 940px) {
+  .autoContainer {
+    padding: 0 25px;
+  }
+
+  @include footerSection-940;
+  @include home-940;
+  @include comparisonTable-940;
+  @include search-940;
+  @include createNft-940;
+}
+@media (max-width: 740px) {
+  .autoContainer {
+    padding: 0 20px;
+  }
+  @include footerSection-740;
+  @include header-740;
+  @include home-740;
+  @include search-740;
+  @include comparisonTable-740;
+  @include createNft-740;
+}
+@media (max-width: 540px) {
+  .autoContainer {
+    padding: 0 15px;
+  }
+  @include typography-540;
+  @include footerSection-540;
+  @include header-540;
+  @include home-540;
+  @include comparisonTable-540;
+  @include createNft-540;
+}
+@media (max-width: 480px) {
+  @include header-480;
+  @include home-480;
+}
